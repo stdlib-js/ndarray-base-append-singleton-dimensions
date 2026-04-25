@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,16 +16,22 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Append singleton dimensions.
+* Returns an array with a specified number of appended singleton dimensions.
 *
-* @module @stdlib/ndarray-base-append-singleton-dimensions
+* @param x - input array
+* @param n - number of singleton dimensions to append
+* @param writable - boolean indicating whether a returned array should be writable
+* @returns output array
 *
 * @example
 * var array = require( '@stdlib/ndarray-array' );
-* var appendSingletonDimensions = require( '@stdlib/ndarray-base-append-singleton-dimensions' );
 *
 * var x = array( [ [ 1, 2 ], [ 3, 4 ] ] );
 * // returns <ndarray>[ [ 1, 2 ], [ 3, 4 ] ]
@@ -33,12 +39,9 @@
 * var y = appendSingletonDimensions( x, 3, false );
 * // returns <ndarray>[ [ [ [ [ 1 ] ] ], [ [ [ 2 ] ] ] ], [ [ [ [ 3 ] ] ], [ [ [ 4 ] ] ] ] ]
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function appendSingletonDimensions<T extends ndarray>( x: T, n: number, writable: boolean ): T;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = appendSingletonDimensions;
